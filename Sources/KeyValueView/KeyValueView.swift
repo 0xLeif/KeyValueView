@@ -6,7 +6,7 @@ public typealias KVColor = NSColor
 public typealias KVColor = UIColor
 #endif
 
-public protocol ViewValueView: View {
+public protocol KeyValueView: View {
     associatedtype ColorDictionary: ColorProviding
     associatedtype StringDictionary: StringProviding
     
@@ -18,7 +18,7 @@ public protocol ViewValueView: View {
     func string(forKey key: StringDictionary.StringKey, defaultString: String) -> String
 }
 
-public extension ViewValueView {
+public extension KeyValueView {
     func color(forKey key: ColorDictionary.ColorKey, defaultColor: KVColor) -> KVColor {
         colorDictionary.color(forKey: key, defaultColor: defaultColor)
     }
