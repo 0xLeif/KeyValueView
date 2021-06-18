@@ -19,3 +19,9 @@ public struct BasicStringDictionary<Key: Hashable>: StringProviding {
         self.strings = strings
     }
 }
+
+extension BasicStringDictionary: ExpressibleByDictionaryLiteral {
+    public init(dictionaryLiteral elements: (Key, String)...) {
+        strings = [Key: String](uniqueKeysWithValues: elements)
+    }
+}

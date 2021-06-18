@@ -26,3 +26,9 @@ public struct BasicColorDictionary<Key: Hashable>: ColorProviding {
         self.colors = colors
     }
 }
+
+extension BasicColorDictionary: ExpressibleByDictionaryLiteral {
+    public init(dictionaryLiteral elements: (Key, KVColor)...) {
+        colors = [Key: KVColor](uniqueKeysWithValues: elements)
+    }
+}
