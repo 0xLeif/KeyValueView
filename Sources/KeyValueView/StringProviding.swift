@@ -11,3 +11,11 @@ public extension StringProviding {
         strings[key] ?? defaultString
     }
 }
+
+public struct BasicStringDictionary<Key: Hashable>: StringProviding {
+    public var strings: [Key : String]
+    
+    public init(strings: [Key : String]) {
+        self.strings = strings
+    }
+}

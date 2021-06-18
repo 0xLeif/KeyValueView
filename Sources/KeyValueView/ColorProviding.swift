@@ -18,3 +18,11 @@ public extension ColorProviding {
         Color(color(forKey: key, defaultColor: defaultColor))
     }
 }
+
+public struct BasicColorDictionary<Key: Hashable>: ColorProviding {
+    public var colors: [Key : KVColor]
+    
+    public init(colors: [Key : KVColor]) {
+        self.colors = colors
+    }
+}
